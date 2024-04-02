@@ -1,8 +1,16 @@
+import heart from '../assets/heart.svg'
+import cloud from "../assets/icons/cloud.svg"
+import humidity from "../assets/icons/humidity.svg"
+import tempMax from "../assets/icons/temp-max.svg"
+import tempMin from "../assets/icons/temp-min.svg"
+import wind from "../assets/icons/wind.svg"
+import pin from "../assets/pin.svg"
+
 export default function Main() {
     return (
         <>
             <main>
-                {/* <!-- Begin Wheather --> */}
+                {/* <!-- Begin Weather --> */}
                 <section className="">
                     <div className="container">
                         <div
@@ -13,7 +21,7 @@ export default function Main() {
                                         <button
                                             className="text-sm md:text-base inline-flex items-center space-x-2 px-3 py-1.5 rounded-md bg-[#C5C5C54D]">
                                             <span>Add to Favourite</span>
-                                            <img src="./assets/heart.svg" alt="" />
+                                            <img src={heart} alt="" />
                                         </button>
 
                                     </div>
@@ -24,7 +32,7 @@ export default function Main() {
                                         <div className="max-md:flex items-center max-md:space-x-4">
                                             <h1 className="text-[60px] lg:text-[80px] xl:text-[100px] leading-none md:mb-4">16°</h1>
                                             <div className="flex items-center space-x-4 md:mb-4">
-                                                <img src="./assets/pin.svg" />
+                                                <img src={pin} />
                                                 <h2 className="text-2xl lg:text-[50px]">Dhaka</h2>
                                             </div>
                                         </div>
@@ -38,35 +46,35 @@ export default function Main() {
                                             <span>Temp max</span>
                                             <div className="inline-flex space-x-4">
                                                 <p>19°</p>
-                                                <img src="./assets/icons/temp-max.svg" alt="temp-max" />
+                                                <img src={tempMax} alt="temp-max" />
                                             </div>
                                         </li>
                                         <li className="text-sm lg:text-lg flex items-center justify-between space-x-4">
                                             <span>Temp min</span>
                                             <div className="inline-flex space-x-4">
                                                 <p>19°</p>
-                                                <img src="./assets/icons/temp-min.svg" alt="temp-min" />
+                                                <img src={tempMin} alt="temp-min" />
                                             </div>
                                         </li>
                                         <li className="text-sm lg:text-lg flex items-center justify-between space-x-4">
                                             <span>Humadity</span>
                                             <div className="inline-flex space-x-4">
                                                 <p>58%</p>
-                                                <img src="./assets/icons/humidity.svg" alt="humidity" />
+                                                <img src={humidity} alt="humidity" />
                                             </div>
                                         </li>
                                         <li className="text-sm lg:text-lg flex items-center justify-between space-x-4">
                                             <span>Cloudy</span>
                                             <div className="inline-flex space-x-4">
                                                 <p>86%</p>
-                                                <img src="./assets/icons/cloud.svg" alt="cloudy" />
+                                                <img src={cloud} alt="cloudy" />
                                             </div>
                                         </li>
                                         <li className="text-sm lg:text-lg flex items-center justify-between space-x-4">
                                             <span>Wind</span>
                                             <div className="inline-flex space-x-4">
                                                 <p>5km/h</p>
-                                                <img src="./assets/icons/wind.svg" alt="wind" />
+                                                <img src={wind} alt="wind" />
                                             </div>
                                         </li>
                                     </ul>
