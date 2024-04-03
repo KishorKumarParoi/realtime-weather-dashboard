@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
+import getTime from "../utils/getTime";
 
 const useWeather = () => {
     const [weatherData, setWeatherData] = useState({
         location: "",
-        climate: "",
         temperature: "",
         maxTemperature: "",
         minTemperature: "",
+        description: "",
+        icon: "",
         humidity: "",
         wind: "",
         cloudPercentage: "",
@@ -15,8 +17,6 @@ const useWeather = () => {
         latitude: "",
         sunrise: "",
         sunset: "",
-        icon: "",
-        description: "",
         error: "",
     });
 
@@ -38,8 +38,11 @@ const useWeather = () => {
                 message: "Loading weather data...",
             });
 
+            // console.log('ll->', import.meta.env.kkp);
+
             // todo : fetch weather data from API
-            const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=ccf015b8150160e2c825a4dbc491dc9d&units=metric`);
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=ccf015b8150160e2c825a4dbc491dc9d&units=metric`);
+
             if (!response.ok) {
                 const errorMessage = `Fetching Weather Data Failed: ${response.status}`;
                 throw new Error(errorMessage);
@@ -56,6 +59,11 @@ const useWeather = () => {
                 humidity: data?.main?.humidity,
                 wind: data?.wind?.speed,
                 cloudPercentage: data?.clouds?.all,
+                time: getTime(Date.now()),
+                sunrise: getTime(data?.sys?.sunrise),
+                sunset: getTime(data?.sys?.sunset),
+                description: data?.weather[0]?.description,
+                icon: data?.weather[0]?.icon,
                 longitude: longitude,
                 latitude: latitude,
             };
