@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import redHeart from '../../assets/heart-red.svg';
 import heart from '../../assets/heart.svg';
 import { FavoriteContext, WeatherContext } from '../../contexts';
@@ -11,6 +11,11 @@ export default function AddToFavorite() {
     const { weatherData } = useContext(WeatherContext);
     const { latitude, longitude, location } = weatherData;
     console.log(location, latitude, longitude);
+
+    useEffect(() => {
+        const found = favorites.find(favorite => favorite.location === location);
+        toggleFavorite(found);
+    }, []);
 
     const handleFavorites = () => {
         toggleFavorite(!isFavorite);
