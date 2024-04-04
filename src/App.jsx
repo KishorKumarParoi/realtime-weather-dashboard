@@ -1,13 +1,12 @@
 import Page from "./components/Page";
-import FavoriteProvider from "./provider/FavoriteProvider";
-import WeatherContextProvider from './provider/WeatherProvider';
+import { FavoriteContextProvider, WeatherContextProvider } from "./provider";
 
 export default function App() {
   return (
     <WeatherContextProvider>
-      <FavoriteProvider>
+      <FavoriteContextProvider>
         <Page />
-      </FavoriteProvider>
+      </FavoriteContextProvider>
     </WeatherContextProvider>
   )
 }

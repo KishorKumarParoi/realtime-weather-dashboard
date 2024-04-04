@@ -1,10 +1,11 @@
 import { FavoriteContext } from '../contexts';
 import { useLocalStorage } from '../hooks';
 
-export default function FavoriteProvider({ children }) {
+export default function FavoriteContextProvider({ children }) {
     const [favorites, setFavorites] = useLocalStorage('favorites', []);
 
     const addToFavorites = (latitude, longitude, location) => {
+        console.log('addToFavorites', latitude, longitude, location);
         setFavorites(
             [
                 ...favorites,

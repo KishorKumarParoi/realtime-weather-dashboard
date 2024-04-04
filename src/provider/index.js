@@ -1,3 +1,5 @@
+import FavoriteContextProvider from './FavoriteProvider';
 import WeatherContextProvider from "./WeatherProvider";
 
-export { WeatherContextProvider };
+export { FavoriteContextProvider, WeatherContextProvider };
+
