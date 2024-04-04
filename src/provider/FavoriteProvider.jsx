@@ -5,7 +5,7 @@ export default function FavoriteContextProvider({ children }) {
     const [favorites, setFavorites] = useLocalStorage('favorites', []);
 
     const addToFavorites = (latitude, longitude, location) => {
-        console.log('addToFavorites', latitude, longitude, location);
+        // console.log('addToFavorites', latitude, longitude, location);
         setFavorites(
             [
                 ...favorites,
