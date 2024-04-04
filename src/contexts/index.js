@@ -1,2 +1,5 @@
+import FavoriteContext from './favoriteContext';
 import WeatherContext from "./weatherContext";
-export { WeatherContext };
+
+export { FavoriteContext, WeatherContext };
+
