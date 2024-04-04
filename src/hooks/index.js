@@ -1,3 +1,5 @@
+import LocalStorage from './useLocalStorage';
 import useWeather from './useWeather';
 
-export { useWeather };
+export { LocalStorage, useWeather };
+
