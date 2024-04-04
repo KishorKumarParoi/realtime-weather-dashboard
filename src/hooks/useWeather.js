@@ -33,6 +33,7 @@ const useWeather = () => {
 
     // location
     const { selectedLocation } = useContext(LocationContext);
+    // console.log('selectedLocation', selectedLocation);
 
     // fetch weather data
     const featchWeatherData = async (latitude, longitude) => {
