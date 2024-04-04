@@ -64,6 +64,8 @@ const useWeather = () => {
                 sunset: getTime(data?.sys?.sunset),
                 description: data?.weather[0]?.description,
                 icon: data?.weather[0]?.icon,
+                name: data?.name,
+                dt: data?.dt,
                 longitude: longitude,
                 latitude: latitude,
             };
