@@ -9,13 +9,11 @@ import WeatherContext from '../../contexts/weatherContext'
 export default function WeatherHeadline() {
     const { weatherData } = useContext(WeatherContext);
     const { tempMax, tempMin, humidity, clouds, wind, weather, feelsLike } = weatherData;
-    console.log(weather);
-    // const climate = weather[0].description;
 
     return (
         <>
             <div>
-                <p className="text-sm lg:text-lg font-bold uppercase mb-8">the climate is <u>{ }</u></p>
+                <p className="text-sm lg:text-lg font-bold uppercase mb-8">the climate is <u>{weather}</u></p>
                 <ul className="space-y-6 lg:space-y-6">
                     <li className="text-sm lg:text-lg flex items-center justify-between space-x-4">
                         <span>Temp max</span>
