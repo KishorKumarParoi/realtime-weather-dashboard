@@ -6,4 +6,8 @@ const getAMPM = () => {
     return timeString12hr;
 }
 
+setInterval(() => {
+    getAMPM();
+}, 60000);
+
 export default getAMPM;

@@ -8,6 +8,7 @@ const useWeather = () => {
         maxTemperature: "",
         minTemperature: "",
         description: "",
+        feels_like: "",
         icon: "",
         humidity: "",
         wind: "",
@@ -53,19 +54,19 @@ const useWeather = () => {
                 ...weatherData,
                 location: data?.name,
                 weather: data?.weather[0]?.main,
+                feelsLike: data?.main?.feels_like,
                 temperature: data?.main?.temp,
-                maxTemperature: data?.main?.temp_max,
-                minTemperature: data?.main?.temp_min,
+                tempMax: data?.main?.temp_max,
+                tempMin: data?.main?.temp_min,
                 humidity: data?.main?.humidity,
                 wind: data?.wind?.speed,
-                cloudPercentage: data?.clouds?.all,
-                time: getTime(Date.now()),
+                clouds: data?.clouds?.all,
                 sunrise: getTime(data?.sys?.sunrise),
                 sunset: getTime(data?.sys?.sunset),
                 description: data?.weather[0]?.description,
                 icon: data?.weather[0]?.icon,
                 name: data?.name,
-                dt: data?.dt,
+                time: data?.dt,
                 longitude: longitude,
                 latitude: latitude,
             };
@@ -87,7 +88,7 @@ const useWeather = () => {
         setLoading({
             ...loading,
             state: true,
-            message: "Getting your location...",
+            message: "Getting your location Data...",
         });
 
         navigator.geolocation.getCurrentPosition(function (position) {
